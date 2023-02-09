@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color:  #3c3535;
+}
+
+.myLabel {
+    -fx-fill: white;
+    -fx-text-fill: white;
+    -fx-translate-x: 50;
+}
+
+.button {
+    -fx-background-color: #4d4646;
+    -fx-fill: white;
+}
+.tableView{
+
+    -fx-background-color:  #3c3535;
+}
