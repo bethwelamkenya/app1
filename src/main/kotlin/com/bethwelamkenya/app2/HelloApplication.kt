@@ -1,5 +1,6 @@
 package com.bethwelamkenya.app2
 
+import com.bethwelamkenya.app2.databases.DatabaseAdapter
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
@@ -20,9 +21,14 @@ class HelloApplication : Application() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
+            val adapter = DatabaseAdapter()
             val appDatabaseDir = File(System.getProperty("user.home") + "/AppData/Roaming/App2/Databases")
             if (!appDatabaseDir.exists()){
                 appDatabaseDir.mkdirs()
+                adapter.memberTable()
+                adapter.adminTable()
+                adapter.attendaceTable()
+                adapter.dateTable()
             }
             launch(HelloApplication::class.java)
         }

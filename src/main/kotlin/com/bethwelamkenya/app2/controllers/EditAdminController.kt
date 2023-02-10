@@ -60,7 +60,7 @@ class EditAdminController : Initializable {
         name.text = admin.name
         email.text = admin.email
         mobile.text = admin.number.toString()
-        userName.text = admin.userName
+        userName.text = admin.username
         security.text = admin.security
         name.setOnKeyReleased {validateDetails()}
         email.setOnKeyReleased {validateDetails()}

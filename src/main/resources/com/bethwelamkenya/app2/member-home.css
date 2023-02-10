@@ -1,0 +1,126 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color:  #3c3535;
+}
+
+.myLabel {
+    -fx-fill: white;
+    -fx-text-fill: white;
+    /*-fx-font: corbel;*/
+    /*-fx-translate-x: 50;*/
+}
+
+.button {
+    -fx-background-color: #4d4646;
+    -fx-fill: white;
+}
+.table-view{
+
+    -fx-background-color:  #3c3535;
+}
+
+.table-row-cell{
+   -fx-dark-text-color: #DDDDDD;
+   -fx-mid-text-color: #DDDDDD;
+   -fx-light-text-color: #DDDDDD;
+   -fx-font-size: 14;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #4d4646;
+    -fx-fill:white;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #3c3535;
+    -fx-fill:white;
+}
+
+.table-row-cell:focused {
+    -fx-background-color: #b7efaf;
+   -fx-dark-text-color: #000000;
+   -fx-mid-text-color: #000000;
+   -fx-light-text-color: #000000;
+}
+
+.menu-bar {
+     -fx-background-color: #3c3535;
+ }
+
+ .menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+     -fx-background: -fx-accent;
+     -fx-background-color: #4d4646;
+     -fx-text-fill: -fx-selection-bar-text;
+ }
+
+ .menu-item {
+     -fx-background-color: #4d4646;
+     -fx-padding: 0em 0em 0em 0em;
+     -fx-text-fill: white;
+ }
+
+ .menu-item:hover {
+     -fx-background-color: #5e5757;
+     -fx-padding: 0em 0em 0em 0em;
+     -fx-text-fill: white;
+ }
+
+ .context-menu {
+     -fx-background-color:#3c3535 ;
+     -fx-background-insets: 0, 1, 2;
+     -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+     -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+     -fx-opacity: 0.9;
+ }
+
+ .menu-item .label{
+      -fx-text-fill: white;
+  }
+
+  .menu .label{
+    -fx-text-fill: white;
+  }
+
+  .menu{
+     -fx-background-color: #3c3535;
+  }
+
+  .tab-label{
+       -fx-text-fill: white;
+  }
+
+  .tab-label:selected{
+       -fx-text-fill: #ffcccc;
+  }
+
+  .tab{
+       -fx-background-color: #3c3535;
+       -fx-effect: null;
+       -fx-focus-color: #4d4646;
+       -fx-faint-focus-color: #4d464699;
+  }
+
+  .tab:selected{
+       -fx-background-color: #4d4646;
+       -fx-effect: null;
+       -fx-focus-color: #4d4646;
+       -fx-faint-focus-color: #4d464699;
+  }
+
+ .tab-pane .tab-header-area .tab-header-background{
+       -fx-background-color: #3c3535;
+       -fx-effect: null;
+       -fx-focus-color: #ffffff;
+       -fx-faint-focus-color: #ffffff99;
+ }
+
+ .list-view{
+       -fx-background-color: #3c3535;
+ }
+
+ .list-view .label{
+       -fx-text-fill: #ffcccc;
+ }

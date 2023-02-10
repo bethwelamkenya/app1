@@ -57,15 +57,25 @@ class ResetPasswordController : Initializable {
         done.isDisable = true
         cancel.setOnAction { stageSwitcher.closeStage(it) }
         checkUserName.setOnAction {
-            if (adapter.adminExists(userName.text)){
+            val name = userName.text
+            if (adapter.adminExists(name)){
+                admin = adapter.getAdmin(name)!!
                 checkBoxUserName.isSelected = true
-                admin = adapter.getAdmin(userName.text)!!
                 security.text = admin.security
             } else{
                 checkBoxUserName.isSelected = false
                 done.isDisable = true
                 stageSwitcher.switchDialogStages("Error", "The User Name Does Not Exist")
             }
+//            if (adapter.adminExists(name)){
+//                admin = adapter.getAdmin(name)!!
+//                checkBoxUserName.isSelected = true
+//                security.text = admin.security
+//            } else{
+//                checkBoxUserName.isSelected = false
+//                done.isDisable = true
+//                stageSwitcher.switchDialogStages("Error", "The User Name Does Not Exist")
+//            }
         }
         checkAnswer.setOnAction {
            if (sha256(answer.text).equals(admin.answer)) {
@@ -85,7 +95,7 @@ class ResetPasswordController : Initializable {
             stageSwitcher.switchDialogStages("Error", "Please Fill In The Password")
         } else{
             if (newPassword.text.equals(confirmPassword.text)){
-                adapter.resetAdminPassword(admin.userName, newPassword.text)
+                adapter.resetAdminPassword(admin.username, newPassword.text)
                 stageSwitcher.switchDialogStages("Confirmation", "Password Updated Successfully")
                 stageSwitcher.closeStage(it)
             } else {

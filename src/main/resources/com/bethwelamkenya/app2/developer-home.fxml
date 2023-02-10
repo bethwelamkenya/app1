@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bethwelamkenya.app2.controllers.DeveloperHomeController">
+    <stylesheets>
+        <URL value="@developer-home.css" />
+    </stylesheets>
+    <children>
+        <MenuBar fx:id="menuBar" prefWidth="1200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="logOut" mnemonicParsing="false" text="Log Out">
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/export_512px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="Close">
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/shutdown_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/home_filled_500px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete">
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/remove_user_filled_500px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/edit_208px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About">
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/info_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/help_512px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <HBox layoutY="25.0" prefHeight="772.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <VBox prefHeight="475.0" prefWidth="325.0" HBox.hgrow="SOMETIMES">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="back" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/back_208px.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="20.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <ImageView fx:id="back1" fitHeight="30.0" fitWidth="30.0" layoutX="30.0" layoutY="20.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/contacts_208px.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="30.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <Button fx:id="fetchAdmins" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" text="Fetch Admins" textFill="WHITE">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="20.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/database_restore_480px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="addNew" mnemonicParsing="false" text="Add New" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/add_user_filled_500px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="editDetails" mnemonicParsing="false" text="Edit Details" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/edit_user_filled_500px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="deleteAdmin" mnemonicParsing="false" text="Remove Admin" textFill="WHITE">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/remove_user_filled_500px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="refresh" mnemonicParsing="false" text="Refresh" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/refresh_512px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="done" mnemonicParsing="false" text="Done" textFill="WHITE" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="30.0" top="10.0" />
+                            </VBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/checkmark_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+                <AnchorPane prefHeight="772.0" prefWidth="801.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="adminTable" prefHeight="772.0" prefWidth="801.0" styleClass="tableView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                                <TableColumn fx:id="adminId" prefWidth="59.0" text="ID" />
+                                <TableColumn fx:id="adminName" prefWidth="185.0" text="Name" />
+                                <TableColumn fx:id="adminEmail" minWidth="0.0" prefWidth="210.0" text="Email" />
+                                <TableColumn fx:id="adminMobile" minWidth="0.0" prefWidth="106.0" text="Mobile" />
+                                <TableColumn fx:id="adminUserName" prefWidth="125.0" text="User Name" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

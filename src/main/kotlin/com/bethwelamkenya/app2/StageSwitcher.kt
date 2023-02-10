@@ -51,6 +51,26 @@ class StageSwitcher {
         }
     }
 
+    fun switchUtilityStagesFromMenu(fxml: String, title: String, resizable: Boolean, menuBar: MenuBar){
+        try {
+            root = FXMLLoader.load(javaClass.getResource(fxml))
+//            val source = menuBar.source as Node
+            val primarySage = menuBar.scene.window as Stage
+            stage = Stage()
+            scene = Scene(root)
+            stage.scene = scene
+            stage.initModality(Modality.WINDOW_MODAL)
+            stage.initOwner(primarySage)
+            stage.x = primarySage.x
+            stage.y = primarySage.y
+            stage.isResizable = resizable
+            stage.title = title
+            stage.show()
+        } catch (e: IOException){
+            throw RuntimeException(e)
+        }
+    }
+
     fun switchUtilityStages(event: Event, fxml: String, title: String, resizable: Boolean){
         try {
             root = FXMLLoader.load(javaClass.getResource(fxml))

@@ -1,9 +1,7 @@
 package com.bethwelamkenya.app2.controllers
 
-import com.bethwelamkenya.app2.PassData
 import com.bethwelamkenya.app2.StageSwitcher
 import com.bethwelamkenya.app2.databases.DatabaseAdapter
-import com.bethwelamkenya.app2.models.Admin
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable

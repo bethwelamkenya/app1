@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bethwelamkenya.app2.controllers.AdminHomeController">
+    <stylesheets>
+        <URL value="@admin-home.css" />
+    </stylesheets>
+    <children>
+        <MenuBar fx:id="menuBar" styleClass="menuBar" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="logOut" mnemonicParsing="false" text="Log Out">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/export_512px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                        <MenuItem fx:id="close" mnemonicParsing="false" text="Close">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/shutdown_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/home_filled_500px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="changePassword" mnemonicParsing="false" text="Change Password">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/lock_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/edit_208px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/info_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic></MenuItem>
+                    </items>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/help_512px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TabPane layoutY="25.0" prefHeight="775.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <tabs>
+                <Tab text="All Members">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <VBox prefHeight="746.0" prefWidth="532.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label text="Member Details" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Dubai Bold" size="20.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="70.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="350.0" prefWidth="350.0">
+                                                    <children>
+                                                        <VBox prefHeight="300.0" prefWidth="150.0">
+                                                            <children>
+                                                                <Label text="ID" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="15.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="40.0" layoutY="55.0" text="Name" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="15.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="83.0" text="Email" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="15.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="101.0" text="Reg No" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="15.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="119.0" text="Mobile" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="137.0" text="School" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="155.0" text="Year" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="173.0" text="Department" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                                <Label layoutX="10.0" layoutY="191.0" text="Residence" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Corbel Bold" size="15.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="15.0" />
+                                                                    </VBox.margin>
+                                                                </Label>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="459.0" prefWidth="251.0">
+                                                            <children>
+                                                                <TextField fx:id="id" editable="false" promptText="ID">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <TextField fx:id="name" layoutX="10.0" layoutY="10.0" promptText="Name">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <TextField fx:id="email" layoutX="10.0" layoutY="35.0" promptText="Email">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <TextField fx:id="regno" layoutX="10.0" layoutY="60.0" promptText="Registration Number">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <TextField fx:id="mobile" layoutX="10.0" layoutY="85.0" promptText="Mobile Number">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                                <ComboBox fx:id="school" minHeight="-Infinity" prefHeight="32.0" promptText="School">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                </ComboBox>
+                                                                <ComboBox fx:id="year" minHeight="-Infinity" prefHeight="32.0" promptText="Year">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                </ComboBox>
+                                                                <ComboBox fx:id="department" minHeight="-Infinity" prefHeight="32.0" promptText="Department">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                </ComboBox>
+                                                                <TextField fx:id="residence" layoutX="10.0" layoutY="185.0" promptText="Residence">
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" top="5.0" />
+                                                                    </VBox.margin>
+                                                                    <font>
+                                                                        <Font size="15.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                    <children>
+                                                        <VBox prefHeight="192.0" prefWidth="222.0">
+                                                            <children>
+                                                                <Button fx:id="fetchData" mnemonicParsing="false" text="Fetch Data" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/database_restore_480px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                                <Button fx:id="refresh" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Refresh" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/refresh_512px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                                <Button fx:id="deleteMember" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" text="Delete Member" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/remove_user_filled_500px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="192.0" prefWidth="224.0">
+                                                            <children>
+                                                                <Button fx:id="editDetails" mnemonicParsing="false" text="Add Member" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fx:id="addMemberImage" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/add_user_filled_500px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                                <Button fx:id="clearForm" mnemonicParsing="false" text="Clear Form" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/form_512px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                                <Button fx:id="printForm" layoutX="10.0" layoutY="54.0" mnemonicParsing="false" text="Print Form" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="Dubai Bold" size="18.0" />
+                                                                    </font>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                                    </VBox.margin>
+                                                                    <graphic>
+                                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                                            <image>
+                                                                                <Image url="@assets/print_512px.png" />
+                                                                            </image>
+                                                                        </ImageView>
+                                                                    </graphic>
+                                                                </Button>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="memberTable" prefHeight="746.0" prefWidth="901.0" styleClass="tableView" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="memberId" prefWidth="28.0" text="ID" />
+                                                <TableColumn fx:id="memberName" prefWidth="169.0" text="Name" />
+                                                <TableColumn fx:id="memberEmail" prefWidth="145.0" text="Email" />
+                                                <TableColumn fx:id="memberRegNo" prefWidth="77.0" text="Reg No" />
+                                                <TableColumn fx:id="memberMobile" prefWidth="67.0" text="Mobile" />
+                                                <TableColumn fx:id="memberSchool" prefWidth="86.0" text="School" />
+                                                <TableColumn fx:id="memberYear" prefWidth="36.0" text="Year" />
+                                                <TableColumn fx:id="memberDepartment" minWidth="0.0" prefWidth="89.0" text="Department" />
+                                                <TableColumn fx:id="memberResidence" prefWidth="86.0" text="Residence" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/contacts_208px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+                <Tab text="Attendances">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <VBox prefHeight="746.0" prefWidth="520.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefWidth="200.0">
+                                                    <children>
+                                                        <Label text="Pick A Date" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="Dubai Bold" size="20.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="50.0" />
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <DatePicker fx:id="attendanceDatePicker" minHeight="-Infinity" prefHeight="35.0" prefWidth="263.0">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="20.0" top="10.0" />
+                                                    </VBox.margin>
+                                                </DatePicker>
+                                                <Button fx:id="fetchAttendanceData" mnemonicParsing="false" text="Fetch Data" textFill="WHITE">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="40.0" top="10.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@assets/database_restore_480px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Button fx:id="refreshAttendance" mnemonicParsing="false" text="Refresh" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="40.0" top="10.0" />
+                                                    </VBox.margin>
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@assets/refresh_512px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Button fx:id="submitAttendance" mnemonicParsing="false" text="Submit Data" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="40.0" top="10.0" />
+                                                    </VBox.margin>
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@assets/save_480px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                                <Label text="There Are:" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Corbel Bold" size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Label fx:id="attendanceNumber" layoutX="10.0" layoutY="340.0" text="Members" textFill="WHITE">
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                                    </VBox.margin>
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="attendanceTable" prefHeight="746.0" prefWidth="1100.0" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="attendanceId" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="attendanceMemberId" prefWidth="75.0" text="MemberId" />
+                                                <TableColumn fx:id="attendanceMemberName" prefWidth="333.0" text="MemberName" />
+                                                <TableColumn fx:id="attendanceMemberNumber" prefWidth="116.0" text="MemberNumber" />
+                                                <TableColumn fx:id="attendanceMemberResidence" prefWidth="189.0" text="MemberResidence" />
+                                                <TableColumn fx:id="attendanceStatus" minWidth="0.0" prefWidth="100.0" text="Status" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/attendance_mark_480px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+                <Tab text="Specific Attendance">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <VBox alignment="TOP_CENTER" prefHeight="646.0" prefWidth="402.0">
+                                            <children>
+                                                <Label text="Choose Member To Display Attendance" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="18.0" />
+                                                    </font>
+                                                    <VBox.margin>
+                                                        <Insets bottom="10.0" />
+                                                    </VBox.margin>
+                                                </Label>
+                                                <Button fx:id="getSpecificMembers" mnemonicParsing="false" text="Get Members" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                </Button>
+                                                <ListView fx:id="specificMembers" prefHeight="350.0" prefWidth="362.0">
+                                                    <VBox.margin>
+                                                        <Insets left="20.0" right="20.0" top="10.0" />
+                                                    </VBox.margin>
+                                                </ListView>
+                                                <HBox alignment="CENTER" prefWidth="200.0">
+                                                    <children>
+                                                        <CheckBox fx:id="allTime" mnemonicParsing="false" text="All Time" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets right="30.0" />
+                                                            </HBox.margin>
+                                                        </CheckBox>
+                                                        <CheckBox fx:id="specified" mnemonicParsing="false" text="Specified" textFill="WHITE">
+                                                            <font>
+                                                                <Font name="System Bold" size="18.0" />
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="30.0" />
+                                                            </HBox.margin>
+                                                        </CheckBox>
+                                                    </children>
+                                                    <VBox.margin>
+                                                        <Insets top="10.0" />
+                                                    </VBox.margin>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="201.0">
+                                                            <children>
+                                                                <Label text="From" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <DatePicker fx:id="startDate" prefHeight="35.0" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="201.0">
+                                                            <children>
+                                                                <Label text="To" textFill="WHITE">
+                                                                    <font>
+                                                                        <Font name="System Bold" size="18.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <DatePicker fx:id="endDate" prefHeight="35.0" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <Button fx:id="getSpecificAttendance" mnemonicParsing="false" text="Get Attendance" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Dubai Bold" size="18.0" />
+                                                    </font>
+                                                    <graphic>
+                                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@assets/database_restore_480px.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </graphic>
+                                                </Button>
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                        </VBox>
+                                        <TableView fx:id="specificAttendanceTable" prefHeight="646.0" prefWidth="799.0" HBox.hgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="specificAttendanceID" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="specificAttendanceDate" prefWidth="228.0" text="Date" />
+                                                <TableColumn fx:id="specificAttendanceStatus" prefWidth="228.0" text="Status" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/attendance_mark_480px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

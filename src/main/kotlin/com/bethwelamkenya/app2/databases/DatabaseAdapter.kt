@@ -21,12 +21,13 @@ class DatabaseAdapter {
             val statement: Statement = connection.createStatement()
             statement.executeUpdate(query)
         } catch (e: SQLException) {
-            throw RuntimeException(e)
+            println(e)
+//            throw RuntimeException(e)
         }
     }
 
     fun memberTable() {
-        val memberTable = ("CREATE TABLE member (id INTEGER PRIMARY KEY AUTO_INCREMENT, "
+        val memberTable = ("CREATE TABLE member (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "name TEXT UNIQUE, "
                 + "email TEXT, "
                 + "number INTEGER, "
@@ -40,7 +41,7 @@ class DatabaseAdapter {
     }
 
     fun adminTable() {
-        val adminTable = ("CREATE TABLE admin (id INTEGER PRIMARY KEY AUTO_INCREMENT, "
+        val adminTable = ("CREATE TABLE admin (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "name TEXT, "
                 + "email TEXT, "
                 + "number INTEGER, "
@@ -79,7 +80,14 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+            if(preparedStatement != null){
+                preparedStatement.close()
+            }
+            if (resultSet !=null){
+                resultSet.close()
+            }
+//            connection.close()
+//            connection.endRequest()
         }
     }
 
@@ -88,8 +96,7 @@ class DatabaseAdapter {
         school: String?, year: Int, department: String?, residence: String?
     ): Boolean {
         return try {
-            val membersInsert =
-                "INSERT INTO member ( name , email, regno, number, school, year, department, residence) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)"
+            val membersInsert = "INSERT INTO member ( name , email, regno, number, school, year, department, residence) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)"
             preparedStatement = connection.prepareStatement(membersInsert)
             preparedStatement.setString(1, name)
             preparedStatement.setString(2, email)
@@ -104,7 +111,14 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+            if(preparedStatement != null){
+                preparedStatement.close()
+            }
+            if (resultSet !=null){
+                resultSet.close()
+            }
+//            connection.close()
+//            connection.endRequest()
         }
     }
 
@@ -128,7 +142,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -146,7 +161,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -160,7 +176,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -186,7 +203,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -211,7 +229,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -233,7 +252,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -248,7 +268,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -262,7 +283,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -276,7 +298,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -290,7 +313,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -304,7 +328,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -350,7 +375,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -376,7 +402,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+            connection.endRequest()
+//            connection.close()
         }
     }
 
@@ -401,7 +428,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -426,7 +454,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+            connection.endRequest()
+//            connection.close()
         }
     }
 
@@ -440,7 +469,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -454,7 +484,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -468,7 +499,8 @@ class DatabaseAdapter {
             println(e)
             null
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -483,7 +515,14 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+            if(preparedStatement != null){
+                preparedStatement.close()
+            }
+            if (resultSet !=null){
+                resultSet.close()
+            }
+//            connection.close()
+//            connection.endRequest()
         }
     }
 
@@ -498,7 +537,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -513,7 +553,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 
@@ -528,7 +569,8 @@ class DatabaseAdapter {
             println(e)
             false
         } finally {
-            connection.close()
+//            connection.close()
+            connection.endRequest()
         }
     }
 

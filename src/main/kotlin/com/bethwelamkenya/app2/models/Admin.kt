@@ -5,7 +5,7 @@ data class Admin(
     val name: String,
     val email: String,
     val number: Long,
-    val userName: String,
+    val username: String,
     val password: String,
     val security: String,
     val answer: String

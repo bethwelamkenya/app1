@@ -105,12 +105,6 @@ class HelloController : Initializable{
 
     private fun checkDetailsValidity(event: Event){
         try {
-            if (firstTime){
-                adapter.memberTable()
-                adapter.adminTable()
-                adapter.attendaceTable()
-                adapter.dateTable()
-            }
             if (accountType.selectionModel.selectedIndex == 0){
                 if (adapter.logIn(userName.text, password.text)){
                     println("hi " + userName.text)

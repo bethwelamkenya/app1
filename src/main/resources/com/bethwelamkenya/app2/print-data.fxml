@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" styleClass="mainFxmlClass" stylesheets="@print-data.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bethwelamkenya.app2.controllers.PrintDataController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#goBack" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/back_208px.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label text="Choose Columns To Print" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="180.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="700.0">
+                    <children>
+                        <VBox prefHeight="108.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <CheckBox fx:id="name" disable="true" mnemonicParsing="false" selected="true" text="Name" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="regNo" mnemonicParsing="false" text="Registration number" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="school" mnemonicParsing="false" text="School" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="department" mnemonicParsing="false" text="Department" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="108.0" prefWidth="350.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <CheckBox fx:id="email" mnemonicParsing="false" text="Email" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="mobileNumber" mnemonicParsing="false" text="Mobile Number" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="year" mnemonicParsing="false" text="Year" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="residence" mnemonicParsing="false" text="Residence" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" left="30.0" top="10.0" />
+                                    </VBox.margin>
+                                </CheckBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                    </VBox.margin>
+                </Separator>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Group To Print" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="selectYear" prefHeight="35.0" promptText="Select An Year">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                        <Label text="No. Of Blank Columns" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Spinner fx:id="blankColumns" prefHeight="35.0" prefWidth="75.0">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Spinner>
+                    </children>
+                </HBox>
+                <Separator layoutX="10.0" layoutY="228.0" prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                    </VBox.margin>
+                </Separator>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <CheckBox fx:id="attendance" mnemonicParsing="false" text="Attendance" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </CheckBox>
+                        <Label text="From" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <DatePicker fx:id="startDate" prefHeight="35.0" prefWidth="150.0">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin></DatePicker>
+                        <Label text="To" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="endDate" prefHeight="35.0" prefWidth="150.0">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin></DatePicker>
+                    </children>
+                </HBox>
+                <Separator layoutX="10.0" layoutY="407.0" prefWidth="200.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                    </VBox.margin>
+                </Separator>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Selected Columns:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="noColumns" layoutX="10.0" layoutY="10.0" text="Columns" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="print" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Print" textFill="WHITE">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="30.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/print_512px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="cancel" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" text="Cancel" textFill="WHITE">
+                            <font>
+                                <Font name="Dubai Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@assets/delete_sign_208px.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

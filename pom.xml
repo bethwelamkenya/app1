@@ -128,6 +128,11 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <excludes>
+                        <exclude>META-INF/*.SF</exclude>
+                        <exclude>META-INF/*.DSA</exclude>
+                        <exclude>META-INF/*.RSA</exclude>
+                    </excludes>
                     <source>11</source>
                     <target>11</target>
                 </configuration>
