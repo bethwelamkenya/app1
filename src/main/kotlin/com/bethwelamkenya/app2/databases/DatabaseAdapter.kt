@@ -368,6 +368,7 @@ class DatabaseAdapter {
                 resultSet.getString("school"),
                 resultSet.getInt("year"),
                 resultSet.getString("department"),
+
                 resultSet.getString("residence")
             )
             member
